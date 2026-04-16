@@ -1,0 +1,85 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+        "name": "x64-release",
+        "displayName": "x64 Release",
+        "inherits": "windows-base",
+        "architecture": {
+            "value": "x64",
+            "strategy": "external"
+        },
+        "cacheVariables": {
+            "CMAKE_BUILD_TYPE": "Release",
+            "VCPKG_TARGET_TRIPLET": "x64-windows"
+        }
+    },
+    {
+        "name": "x86-release",
+        "displayName": "x86 Release",
+        "inherits": "windows-base",
+        "architecture": {
+            "value": "x86",
+            "strategy": "external"
+        },
+        "cacheVariables": {
+            "CMAKE_BUILD_TYPE": "Release",
+            "VCPKG_TARGET_TRIPLET": "x86-windows"
+        }
+    },
+    {
+        "name": "arm64-release",
+        "displayName": "arm Release",
+        "inherits": "windows-base",
+        "architecture": {
+            "value": "arm64",
+            "strategy": "external"
+        },
+        "cacheVariables": {
+            "CMAKE_BUILD_TYPE": "Release",
+            "VCPKG_TARGET_TRIPLET": "arm64-windows"
+        }
+    },
+    {
+      "name": "x64-mingw-release",
+      "displayName": "x64 Release build on MSYS with MinGW (vcpkg)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/msys/ucrt-release-x64",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+        "VCPKG_TARGET_TRIPLET": "x64-mingw-dynamic",
+        "CMAKE_C_COMPILER": "/ucrt64/bin/gcc",
+        "CMAKE_CXX_COMPILER": "/ucrt64/bin/g++"
+      }
+    },
+    {
+      "name": "x86-mingw-release",
+      "displayName": "x86 Release build on MSYS with MinGW (vcpkg)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/msys/mingw-release-i686",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+        "VCPKG_HOST_TRIPLET": "x64-mingw-dynamic",
+        "VCPKG_TARGET_TRIPLET": "x86-mingw-dynamic",
+        "CMAKE_C_COMPILER": "/mingw32/bin/gcc",
+        "CMAKE_CXX_COMPILER": "/mingw32/bin/g++"
+      }
+    },
+    {
+      "name": "arm64-mingw-release",
+      "displayName": "arm64 Release build on MSYS with MinGW (vcpkg)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/msys/mingw-release-i686",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/vcpkg/scripts/buildsystems/vcpkg.cmake",
+        "VCPKG_HOST_TRIPLET": "x64-mingw-dynamic",
+        "VCPKG_TARGET_TRIPLET": "arm64-mingw-dynamic",
+        "CMAKE_C_COMPILER": "/clangarm64/bin/cc",
+        "CMAKE_CXX_COMPILER": "/clangar64/bin/c++"
+      }
+    }   
+  ]
+}

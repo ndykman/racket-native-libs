@@ -1,0 +1,30 @@
+{
+  "name": "racket-native-libs",
+  "version": "0.0.1",
+  "dependencies": [
+    {
+      "name": "libjpeg-turbo",
+      "features": [
+        "jpeg8"
+      ]
+    },
+    "gdk-pixbuf",
+    "libffi",
+    "gmp",
+    "mpfr",
+    "openssl",
+    "sqlite3",
+    "freetype",
+    "harfbuzz",
+    "fontconfig",
+    "pango",
+    "gtk3",
+    "poppler"
+  ],
+  "overrides" : [
+    {
+      "name" : "gdk-pixbuf",
+      "version" : "2.42.12#6"
+    }
+  ]
+}
