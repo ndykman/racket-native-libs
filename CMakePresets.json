@@ -34,7 +34,7 @@
             "lhs": "${hostSystemName}",
             "rhs": "MinGW"
         }
-    }
+    },
     {
         "name": "linux-base",
         "hidden": true,
