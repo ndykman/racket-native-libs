@@ -78,8 +78,21 @@
         "VCPKG_HOST_TRIPLET": "x64-mingw-dynamic",
         "VCPKG_TARGET_TRIPLET": "arm64-mingw-dynamic",
         "CMAKE_C_COMPILER": "/clangarm64/bin/cc",
-        "CMAKE_CXX_COMPILER": "/clangar64/bin/c++"
+        "CMAKE_CXX_COMPILER": "/clangarm64/bin/c++"
       }
-    }   
+    },
+    {
+        "name": "x64-linux-release",
+        "displayName": "x64 Linux Release",
+        "inherits": "linux-base",
+        "architecture": {
+            "value": "x64",
+            "strategy": "external"
+        },
+        "cacheVariables": {
+            "CMAKE_BUILD_TYPE": "Release",
+            "VCPKG_TARGET_TRIPLET": "x64-linux"
+        }
+    }  
   ]
 }

@@ -8,8 +8,12 @@
         "jpeg8"
       ]
     },
+    "argon2",
+    "gettext",
     "gdk-pixbuf",
     "libffi",
+    "libgit2",
+    "libsass",
     "gmp",
     "mpfr",
     "openssl",
