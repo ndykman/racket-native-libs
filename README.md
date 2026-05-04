@@ -67,7 +67,7 @@ Again, open a Developer PowerShell for VS 18 terminal window and change to the p
 
 You can now run 
 ```
-.\build-deps.ps1 -Arch [arch]
+.\Build-Racket-Libs.ps1 -Arch [arch]
 ``` 
 
 where ```[arch]``` can be one of ```x64, x86, arm64```. If this fails, make sure CMake and VCPkg is in your path. 
@@ -85,7 +85,7 @@ You may see an error about ninja not being found, you can ignore this. Repeat th
 
 ### Troubleshooting
 
-On occasion, the build tools seem to get stuck and files are locked. If you get a build error, just try rerunning the ```build-deps.ps1``` again. This seems to be a weird cmake and MSVC tooling bug.
+On occasion, the build tools seem to get stuck and files are locked. If you get a build error, just try rerunning the ```bBuild-Racket-Libs.ps1``` again. This seems to be a weird cmake and MSVC tooling bug.
 
 Preparing the Shared Libraries
 ====
@@ -95,7 +95,11 @@ TODO: Finalize the appropriate layout with the Racket core team.
 You should now be able to copy the libraries into a form suited for the packages
 by running 
 
-```copy-deps.ps1 [dest-dir]``` where ```[dest-dir]``` is the root directory you want the files. From there, they should be ready to add to the relevant packages. 
+```Copy-Racket-Libs.ps1```
+
+this will create a ```dist``` directory with three sub-directories for each architecture. In each of those directory, there base, draw, gui, poppler and etc directory. 
+
+NOTE: Need to add longdouble.dll and myssink.dll builds. 
 
 Additional Information
 ===
@@ -106,6 +110,8 @@ Now, it would be nice if these tools could used on Linux for cross-compilation.
 As of now, the libraries and the toolchain is just not mature enough for this. ARM64 is especially problematic currently. If future toolchain support improves, these tools can be used on Linux as vcpkg is supported on Windows, MacOS and Linux. 
 
 With some future testing, it is possible this project can be used to build and track all the needed external shared libraries for Racket on Linux, MacOS and Windows.
+
+It is vital to note that a external library used by Racket does *not* need to be a vcpkg. 
 
 Acknowledgements
 ===
