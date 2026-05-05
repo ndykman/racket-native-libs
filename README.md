@@ -85,7 +85,7 @@ You may see an error about ninja not being found, you can ignore this. Repeat th
 
 ### Troubleshooting
 
-On occasion, the build tools seem to get stuck and files are locked. If you get a build error, just try rerunning the ```bBuild-Racket-Libs.ps1``` again. This seems to be a weird cmake and MSVC tooling bug.
+On occasion, the build tools seem to get stuck and files are locked. If you get a build error, just try rerunning the ```Build-Racket-Libs.ps1``` again. This seems to be a weird cmake and MSVC tooling bug.
 
 Preparing the Shared Libraries
 ====
