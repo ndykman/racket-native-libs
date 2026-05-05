@@ -1,2 +1,4 @@
-**/build-*
+build-x64
+build-x86
+build-arm64
 dist/
