@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"E:/racket_dev/racket-native-libs/src/longdouble/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

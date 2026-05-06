@@ -45,13 +45,20 @@ cd C:\ctools\vcpkg; .\bootstrap-vcpkg.bat
 
 Your environment should now be setup. 
 
+
+To check this, run Windows Terminal and verify there is an option to open ```Developer PowerShell for Visual Studio 18```
+
+```Visual Studio 18``` is the latest version; Microsoft has recently moved away from year based versioning for the build tools.
+
+From now, on, run the commands in a ```Developer PowerShell for Visual Studio 18``` terminal session.
+
 To use ```cmake``` and ```vcpkg```, make sure the appropriate environment variables are set:
 
 ```powershell
 $env:VCPKG_ROOT = "C:\ctools\vcpkg"
 $env:PATH = "$env:VCPKG_ROOT;C:\ctools\cmake\bin;$env:PATH"
 ```
-
+ 
 Cloning this project
 ---
 
@@ -60,10 +67,10 @@ Again, it is highly recommended that a top level directory is used for the sourc
 ```powershell
 mkdir C:\rl_src 
 cd C:\rl_src
-git clone [TODO: add actual URL here]
+git clone https://github.com/ndykman/racket-native-libs.git
 ```
 
-Again, open a Developer PowerShell for VS 18 terminal window and change to the project source directory ```C:\rl_src```
+Again, open a ```Developer PowerShell for Visual Studio 18``` terminal window and change to the project source directory ```C:\rl_src```
 
 You can now run 
 ```
@@ -85,7 +92,9 @@ You may see an error about ninja not being found, you can ignore this. Repeat th
 
 ### Troubleshooting
 
-On occasion, the build tools seem to get stuck and files are locked. If you get a build error, just try rerunning the ```Build-Racket-Libs.ps1``` again. This seems to be a weird cmake and MSVC tooling bug.
+On occasion, the build tools seem to get stuck and files are locked. If you get a build error, just try rerunning the ```Build-Racket-Libs.ps1``` script again. 
+
+This seems to be a weird cmake and MSVC tooling bug.
 
 Preparing the Shared Libraries
 ====
@@ -97,17 +106,14 @@ by running
 
 ```Copy-Racket-Libs.ps1```
 
-this will create a ```dist``` directory with three sub-directories for each architecture. In each of those directory, there base, draw, gui, poppler and etc directory. 
-
-NOTE: Need to add longdouble.dll and myssink.dll builds. 
+this will create a ```dist``` directory with three sub-directories for each architecture. In each of those directory, there base, draw, gui, poppler and etc directory.  
 
 Additional Information
 ===
 
 vcpkg was chosen as it has a large number of libraries that it supports, including a large set of patches to get them to build correctly. Managing this information manually would be overwhelming. 
 
-Now, it would be nice if these tools could used on Linux for cross-compilation. 
-As of now, the libraries and the toolchain is just not mature enough for this. ARM64 is especially problematic currently. If future toolchain support improves, these tools can be used on Linux as vcpkg is supported on Windows, MacOS and Linux. 
+Now, it would be nice if these tools could used on Linux for cross-compilation. As of now, the libraries and the toolchain is just not mature enough for this. ARM64 is especially problematic currently. If future toolchain support improves, these tools can be used on Linux as vcpkg is supported on Windows, MacOS and Linux. 
 
 With some future testing, it is possible this project can be used to build and track all the needed external shared libraries for Racket on Linux, MacOS and Windows.
 
