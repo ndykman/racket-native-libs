@@ -88,7 +88,7 @@
         },
         "cacheVariables": {
             "CMAKE_BUILD_TYPE": "Release",
-            "VCPKG_TARGET_TRIPLET": "x64-linux"
+            "VCPKG_TARGET_TRIPLET": "x64-linux-dynamic"
         }
     },
     {
@@ -101,7 +101,7 @@
         },
         "cacheVariables": {
             "CMAKE_BUILD_TYPE": "Release",
-            "VCPKG_TARGET_TRIPLET": "arm64-osx"
+            "VCPKG_TARGET_TRIPLET": "arm64-osx-dynamic"
         }
     }
   ]
