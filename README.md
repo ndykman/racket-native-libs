@@ -21,12 +21,14 @@ winget update
 winget install Microsoft.Powershell Microsoft.WindowsTerminal
 winget install Git.Git
 winget install Kitware.CMake -l C:\ctools\cmake
-winget install Microsoft.VisualStudio.BuildTools -l C:\ctools\msvc
+winget install Microsoft.VisualStudio.BuildTools -l C:\ctools\msvc --custom  "--add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 --add Microsoft.VisualStudio.Component.Windows11SDK.22621"
 ```
 
 Step 2:
 
-```vcpkg``` is actually a git repository, so it is installed via git.  
+First, close the existing cmd prompt and open a Powershell session via Windows Terminal. This is to pick up new path entries. 
+
+Now, we are going to install ```vcpkg```. ```vcpkg``` is actually a git repository, so it is installed via git.  
 
 ```cmd
 cd C:\ctools
@@ -62,15 +64,15 @@ $env:PATH = "$env:VCPKG_ROOT;C:\ctools\cmake\bin;$env:PATH"
 Cloning this project
 ---
 
-Again, it is highly recommended that a top level directory is used for the sources for this project. This is largely due to some long paths when GTK is built. We will use C:\rl_src as an example.
+Again, it is highly recommended that a top level directory is used for the sources for this project. This is largely due to some long paths when GTK is built. We will use ```C:\rl``` as an example.
 
 ```powershell
-mkdir C:\rl_src 
-cd C:\rl_src
+mkdir C:\rl
+cd C:\rl
 git clone https://github.com/ndykman/racket-native-libs.git
 ```
 
-Again, open a ```Developer PowerShell for Visual Studio 18``` terminal window and change to the project source directory ```C:\rl_src```
+Change to the project source directory ```C:\rl\racket-native-libs```
 
 You can now run 
 ```
