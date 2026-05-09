@@ -52,7 +52,7 @@ To check this, run Windows Terminal and verify there is an option to open ```Dev
 
 ```Visual Studio 18``` is the latest version; Microsoft has recently moved away from year based versioning for the build tools.
 
-From now, on, run the commands in a ```Developer PowerShell for Visual Studio 18``` terminal session.
+From now, on run the commands in a ```Developer PowerShell for Visual Studio 18``` terminal session.
 
 To use ```cmake``` and ```vcpkg```, make sure the appropriate environment variables are set:
 
@@ -125,3 +125,17 @@ Acknowledgements
 ===
 
 Thanks to the Racket community for being supportive of these efforts and ensuring that Racket works on all major operating systems. This is often tiring work that isn't given enough recognition. 
+
+Unsupported Usage
+===
+Since ```vcpkg``` does support MacOS, Windows and Linux, it is possible to use these systems to create dynamic libraries for all three systems. This may not be the best case for Linux and MacOS versus using package manager to install dependencies, but it might be possible to use this to create standalone versions. 
+
+In the case of Linux, one needs to install the gcc/g++ toolchain (preferred) or clang. Also, cmake (version 4.x), git and the ninja build tool need to be installed. 
+
+Then, you can clone the vcpkg repository (say, in ```/opt/vcpkg```) and follow the instructions [here](https://learn.microsoft.com/en-us/vcpkg/get_started/get-started?pivots=shell-bash) to setup vcpkg. 
+
+Then checkout this repository and run ```cmake --preset=x64-linux-release -B build-x64-linux``` and see what happens. 
+
+For MacOS, one needs XCode installed as well as cmake, git and ninja (available via homebrew or ports). Use the same instructions to setup vcpkg as noted for Linux. 
+
+Then checkout this repository and run ```cmake --preset=arm64-osx-release -B build-arm64-osx``` and see what happens. 

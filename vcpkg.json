@@ -28,7 +28,11 @@
   "overrides" : [
     {
       "name" : "gdk-pixbuf",
-      "version" : "2.42.12#6"
+      "version" : "2.44.6#1"
+    },
+    {
+      "name" : "gmp",
+      "version" : "6.3.0#3"
     }
   ]
 }

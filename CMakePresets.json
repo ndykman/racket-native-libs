@@ -51,6 +51,21 @@
             "lhs": "${hostSystemName}",
             "rhs": "linux"
         }
+    },
+    {
+        "name": "osx-base",
+        "hidden": true,
+        "generator": "Ninja",
+        "binaryDir": "${sourceDir}/macos/build/${presetName}",
+        "installDir": "${sourceDir}/macos/install/${presetName}",
+        "cacheVariables": {    
+            "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/vcpkg/scripts/buildsystems/vcpkg.cmake"
+        },
+        "condition": {
+            "type": "equals",
+            "lhs": "${hostSystemName}",
+            "rhs": "Darwin"
+        }
     }
   ]
 }

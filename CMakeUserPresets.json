@@ -93,6 +93,19 @@
             "CMAKE_BUILD_TYPE": "Release",
             "VCPKG_TARGET_TRIPLET": "x64-linux"
         }
-    }  
+    },
+    {
+        "name": "arm64-osx-release",
+        "displayName": "arm64 macOS Release",
+        "inherits": "osx-base",
+        "architecture": {
+            "value": "arm64",
+            "strategy": "external"
+        },
+        "cacheVariables": {
+            "CMAKE_BUILD_TYPE": "Release",
+            "VCPKG_TARGET_TRIPLET": "arm64-osx"
+        }
+    }
   ]
 }
