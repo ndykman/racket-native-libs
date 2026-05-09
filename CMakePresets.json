@@ -27,7 +27,7 @@
         "cacheVariables": {   
             "CMAKE_C_COMPILER": "gcc",
             "CMAKE_CXX_COMPILER": "g++",        
-            "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/vcpkg/scripts/buildsystems/vcpkg.cmake"
+            "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
         },
         "condition": {
             "type": "equals",
@@ -37,29 +37,27 @@
     },
     {
         "name": "linux-base",
-        "hidden": true,
         "generator": "Ninja",
-        "binaryDir": "${sourceDir}/mingw/build/${presetName}",
-        "installDir": "${sourceDir}/mingw/install/${presetName}",
+        "binaryDir": "${sourceDir}/linux/build/${presetName}",
+        "installDir": "${sourceDir}/linux/install/${presetName}",
         "cacheVariables": {   
             "CMAKE_C_COMPILER": "gcc",
             "CMAKE_CXX_COMPILER": "g++",        
-            "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/vcpkg/scripts/buildsystems/vcpkg.cmake"
+            "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
         },
         "condition": {
             "type": "equals",
             "lhs": "${hostSystemName}",
-            "rhs": "linux"
+            "rhs": "Linux"
         }
     },
     {
         "name": "osx-base",
-        "hidden": true,
         "generator": "Ninja",
         "binaryDir": "${sourceDir}/macos/build/${presetName}",
         "installDir": "${sourceDir}/macos/install/${presetName}",
         "cacheVariables": {    
-            "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/vcpkg/scripts/buildsystems/vcpkg.cmake"
+            "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
         },
         "condition": {
             "type": "equals",
