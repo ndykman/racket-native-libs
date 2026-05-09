@@ -134,8 +134,20 @@ In the case of Linux, one needs to install the gcc/g++ toolchain (preferred) or 
 
 Then, you can clone the vcpkg repository (say, in ```/opt/vcpkg```) and follow the instructions [here](https://learn.microsoft.com/en-us/vcpkg/get_started/get-started?pivots=shell-bash) to setup vcpkg. 
 
-Then checkout this repository and run ```cmake --preset=x64-linux-release -B build-x64-linux``` and see what happens. 
+Then checkout this repository and run ```cmake --preset=x64-linux-release -B build-x64-linux``` and see what happens.
+
+You may see warnings like the following 
+
+```
+You will need to install Xorg dependencies to use feature x11:
+
+  sudo apt install libx11-dev libxft-dev libxext-dev
+```
+
+This is an example warning about system packages some libraries may need for the library to be fully usable. These are mainly about ```x11``` or ```wayland```. 
 
 For MacOS, one needs XCode installed as well as cmake, git and ninja (available via homebrew or ports). Use the same instructions to setup vcpkg as noted for Linux. 
 
-Then checkout this repository and run ```cmake --preset=arm64-osx-release -B build-arm64-osx``` and see what happens. 
+Then checkout this repository and run ```cmake --preset=arm64-osx-release -B build-arm64-osx```
+
+As the author has no access to a MacOS environment, this is untested. 
