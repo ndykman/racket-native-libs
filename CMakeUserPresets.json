@@ -11,7 +11,8 @@
         },
         "cacheVariables": {
             "CMAKE_BUILD_TYPE": "Release",
-            "VCPKG_TARGET_TRIPLET": "x64-windows"
+            "VCPKG_BUILD_TYPE": "Release",
+            "VCPKG_TARGET_TRIPLET": "x64-windows-release"
         }
     },
     {
@@ -24,7 +25,8 @@
         },
         "cacheVariables": {
             "CMAKE_BUILD_TYPE": "Release",
-            "VCPKG_TARGET_TRIPLET": "x86-windows"
+            "VCPKG_BUILD_TYPE": "Release",
+            "VCPKG_TARGET_TRIPLET": "x86-windows-release"
         }
     },
     {
@@ -37,7 +39,8 @@
         },
         "cacheVariables": {
             "CMAKE_BUILD_TYPE": "Release",
-            "VCPKG_TARGET_TRIPLET": "arm64-windows"
+            "VCPKG_BUILD_TYPE": "Release",
+            "VCPKG_TARGET_TRIPLET": "arm64-windows-release"
         }
     },
     {
@@ -47,7 +50,7 @@
       "binaryDir": "${sourceDir}/msys/ucrt-release-x64",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
-        "VCPKG_HOST_TRIPLET": "x64-linux",
+        "VCPKG_BUILD_TYPE": "Release",
         "VCPKG_TARGET_TRIPLET": "x64-mingw-dynamic"
       }
     },
@@ -58,7 +61,7 @@
       "binaryDir": "${sourceDir}/msys/mingw-release-x86",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
-        "VCPKG_HOST_TRIPLET": "x64-linux",
+        "VCPKG_BUILD_TYPE": "Release",
         "VCPKG_TARGET_TRIPLET": "x86-mingw-dynamic"
       }
     },
@@ -69,7 +72,7 @@
       "binaryDir": "${sourceDir}/msys/mingw-release-arm64",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
-        "VCPKG_HOST_TRIPLET": "x64-linux",
+        "VCPKG_BUILD_TYPE": "Release",
         "VCPKG_TARGET_TRIPLET": "arm64-mingw-dynamic"
       }
     },
@@ -83,7 +86,7 @@
         },
         "cacheVariables": {
             "CMAKE_BUILD_TYPE": "Release",
-            "VCPKG_HOST_TRIPLET": "x64-linux",
+            "VCPKG_BUILD_TYPE": "Release",
             "VCPKG_TARGET_TRIPLET": "x64-linux-dynamic"
         }
     },
@@ -97,7 +100,7 @@
         },
         "cacheVariables": {
             "CMAKE_BUILD_TYPE": "Release",
-            "VCPKG_HOST_TRIPLET": "arm64-osx",
+            "VCPKG_BUILD_TYPE": "Release",
             "VCPKG_TARGET_TRIPLET": "arm64-osx-dynamic"
         }
     }
