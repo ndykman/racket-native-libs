@@ -47,6 +47,7 @@
       "binaryDir": "${sourceDir}/msys/ucrt-release-x64",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
+        "VCPKG_HOST_TRIPLET": "x64-mingw-dynamic",
         "VCPKG_TARGET_TRIPLET": "x64-mingw-dynamic",
         "CMAKE_C_COMPILER": "/ucrt64/bin/gcc",
         "CMAKE_CXX_COMPILER": "/ucrt64/bin/g++"
@@ -88,6 +89,7 @@
         },
         "cacheVariables": {
             "CMAKE_BUILD_TYPE": "Release",
+            "VCPKG_HOST_TRIPLET": "x64-linux",
             "VCPKG_TARGET_TRIPLET": "x64-linux-dynamic"
         }
     },
@@ -101,6 +103,7 @@
         },
         "cacheVariables": {
             "CMAKE_BUILD_TYPE": "Release",
+            "VCPKG_HOST_TRIPLET": "arm64-osx",
             "VCPKG_TARGET_TRIPLET": "arm64-osx-dynamic"
         }
     }
