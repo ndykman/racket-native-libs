@@ -102,7 +102,7 @@ where ```[arch]``` can be one of ```x64, x86, arm64```. If this fails, make sure
 
 This will take some time as it is building a fairly large set of shared libraries for both the build and host systems. 
 
-Again, be patient, this can run for a noticeable amount of time. A couple of hours, maybe. Take the opportunity to get away from your desk, get a nice beverage, look outside the window, maybe even take a walk.  
+Again, be patient, this can run for a noticeable amount of time; two or three hours is to be expected. Take the opportunity to get away from your desk, get a nice beverage, look outside the window, maybe even take a walk.  
 
 If all is well and done, you should see a message like the following: 
 
