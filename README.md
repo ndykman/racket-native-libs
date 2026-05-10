@@ -59,10 +59,25 @@ cd C:\ctools\vcpkg;
 
 Your environment should now be setup. 
 
-To check this, run Windows Terminal and verify there is an option to open ```Developer PowerShell for Visual Studio 18```. ```Visual Studio 18``` is the latest version; Microsoft has recently moved away from year based versioning for the build tools.
+### Optional Step 4:
+
+The compilation process can be negatively impacted by Windows Security Antivirus scanning. To address this, run ```PowerShell``` as an admin and do the following:
+
+```
+Add-MpPreference -ExclusionPath "C:\tools\vcpkg\*"
+```
+
+This excludes vcpkg from being scanned. Since this where all the build activity happens, this can be helpful. 
+
+Using the Dev Drive Windows feature can also be really useful. See [this](https://learn.microsoft.com/en-us/windows/dev-drive/) for information on how to set up a Dev Drive. For power users, it is possible to remove the anti-virus filter on all Dev Drives, which for some scenarios can have a noticeably positive impact on performance, but has increased security risks.  
+
+## Checking Setup
+
+Run Windows Terminal and verify there is an option to open ```Developer PowerShell for Visual Studio 18```. ```Visual Studio 18``` is the latest version; Microsoft has recently moved away from year based versioning for the build tools.
 
 From now, on run the commands in a ```Developer PowerShell for Visual Studio 18``` terminal session. This ensures that the needed tools are in the ```path``` and can be found by ```vcpkg```
 
+### Environment Variable Setup
 To use ```cmake``` and ```vcpkg```, the appropriate environment variables need to be set:
 
 ```powershell
@@ -102,7 +117,7 @@ where ```[arch]``` can be one of ```x64, x86, arm64```. If this fails, make sure
 
 This will take some time as it is building a fairly large set of shared libraries for both the build and host systems. 
 
-Again, be patient, this can run for a noticeable amount of time; two or three hours is to be expected. Take the opportunity to get away from your desk, get a nice beverage, look outside the window, maybe even take a walk.  
+Again, be patient, this can run for a noticeable amount of time; two hours can be expected. Take the opportunity to get away from your desk, get a nice beverage, look outside the window, maybe even take a walk.  
 
 If all is well and done, you should see a message like the following: 
 

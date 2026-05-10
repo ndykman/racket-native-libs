@@ -14,7 +14,7 @@ if (-not (Test-Path -Path ".\dist\arm64-windows" )) {
     New-Item -Path ".\dist" -Name "arm64-windows" -ItemType Directory
 }
 
-$src_lib_path = ".\build-x64\vcpkg_installed\x64-windows\bin"
+$src_lib_path = ".\build-x64\vcpkg_installed\x64-windows-release\bin"
 $dist_path = ".\dist\x64-windows\base"
 
 if (-not (Test-Path -Path "$dist_path")) {
@@ -134,7 +134,7 @@ Copy-Item -Path "$src_lib_path\sass-1.dll" -Destination "$dist_path"
 # Yea, this is copy paste just for a few different library names, but simple 
 # beats clever here. 
 
-$src_lib_path = ".\build-x86\vcpkg_installed\x86-windows\bin"
+$src_lib_path = ".\build-x86\vcpkg_installed\x86-windows-release\bin"
 $dist_path = ".\dist\x86-windows\base"
 
 if (-not (Test-Path -Path "$dist_path")) {
@@ -253,7 +253,7 @@ Copy-Item -Path "$src_lib_path\sass-1.dll" -Destination "$dist_path"
 
 # ARM64 libraries
 
-$src_lib_path = ".\build-arm64\vcpkg_installed\arm64-windows\bin"
+$src_lib_path = ".\build-arm64\vcpkg_installed\arm64-windows-release\bin"
 $dist_path = ".\dist\arm64-windows\base"
 
 if (-not (Test-Path -Path "$dist_path")) {
