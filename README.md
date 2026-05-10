@@ -89,6 +89,7 @@ If there are any problems building the project, make sure that the environment i
 
 We have finished installing the needed tools and we can move to building the libraries. 
 
+
 ## Clone The Project
 
 Again, it is highly recommended that a top level directory is used for the sources for this project. This is largely due to some long paths when GTK is built. We will use ```C:\rl``` as an example.
@@ -105,6 +106,16 @@ then change to the project source directory:
 
 ```powershell
 cd C:\rl\racket-native-libs
+```
+
+## Copying Community Triplets
+
+There are some ```vcpkg``` triplets that this project uses that don't come with the standard distribution. 
+
+Run the following to copy them. 
+
+```powershell
+Copy-Item .\triplets\*.cmake "$ENV:VCPKG_ROOT\triplets\community"
 ```
 
 ## Build The Libraries
