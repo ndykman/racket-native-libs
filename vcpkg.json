@@ -24,15 +24,5 @@
     "pango",
     "gtk3",
     "poppler"
-  ],
-  "overrides" : [
-    {
-      "name" : "gdk-pixbuf",
-      "version" : "2.44.6#1"
-    },
-    {
-      "name" : "gmp",
-      "version" : "6.3.0#3"
-    }
   ]
 }
