@@ -33,7 +33,7 @@
         "condition": {
             "type": "equals",
             "lhs": "${hostSystemName}",
-            "rhs": "MinGW"
+            "rhs": "Linux"
         }
     },
     {

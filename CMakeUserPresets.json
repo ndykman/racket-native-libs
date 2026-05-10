@@ -47,36 +47,30 @@
       "binaryDir": "${sourceDir}/msys/ucrt-release-x64",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
-        "VCPKG_HOST_TRIPLET": "x64-mingw-dynamic",
-        "VCPKG_TARGET_TRIPLET": "x64-mingw-dynamic",
-        "CMAKE_C_COMPILER": "/ucrt64/bin/gcc",
-        "CMAKE_CXX_COMPILER": "/ucrt64/bin/g++"
+        "VCPKG_HOST_TRIPLET": "x64-linux",
+        "VCPKG_TARGET_TRIPLET": "x64-mingw-dynamic"
       }
     },
     {
       "name": "x86-mingw-release",
       "displayName": "x86 Release build on MSYS with MinGW (vcpkg)",
       "generator": "Ninja",
-      "binaryDir": "${sourceDir}/msys/mingw-release-i686",
+      "binaryDir": "${sourceDir}/msys/mingw-release-x86",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
-        "VCPKG_HOST_TRIPLET": "x64-mingw-dynamic",
-        "VCPKG_TARGET_TRIPLET": "x86-mingw-dynamic",
-        "CMAKE_C_COMPILER": "/mingw32/bin/gcc",
-        "CMAKE_CXX_COMPILER": "/mingw32/bin/g++"
+        "VCPKG_HOST_TRIPLET": "x64-linux",
+        "VCPKG_TARGET_TRIPLET": "x86-mingw-dynamic"
       }
     },
     {
       "name": "arm64-mingw-release",
       "displayName": "arm64 Release build on MSYS with MinGW (vcpkg)",
       "generator": "Ninja",
-      "binaryDir": "${sourceDir}/msys/mingw-release-i686",
+      "binaryDir": "${sourceDir}/msys/mingw-release-arm64",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release",
-        "VCPKG_HOST_TRIPLET": "x64-mingw-dynamic",
-        "VCPKG_TARGET_TRIPLET": "arm64-mingw-dynamic",
-        "CMAKE_C_COMPILER": "/clangarm64/bin/cc",
-        "CMAKE_CXX_COMPILER": "/clangarm64/bin/c++"
+        "VCPKG_HOST_TRIPLET": "x64-linux",
+        "VCPKG_TARGET_TRIPLET": "arm64-mingw-dynamic"
       }
     },
     {
