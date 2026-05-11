@@ -89,7 +89,6 @@ If there are any problems building the project, make sure that the environment i
 
 We have finished installing the needed tools and we can move to building the libraries. 
 
-
 ## Clone The Project
 
 Again, it is highly recommended that a top level directory is used for the sources for this project. This is largely due to some long paths when GTK is built. We will use ```C:\rl``` as an example.
@@ -175,7 +174,7 @@ For unsupported configurations, a deeper knowledge of ```cmake``` is really usef
 
 This is unsupported, but seems to work. 
 
-One needs to install the gcc/g++ toolchain (preferred) or clang. Also, cmake (version 4.x), git and the ninja build tool need to be installed. Then, you can clone the vcpkg repository (say, in ```/opt/vcpkg```) and follow the instructions [here](https://learn.microsoft.com/en-us/vcpkg/get_started/get-started?pivots=shell-bash) to setup vcpkg in the Linux environment.  
+One needs to install the gcc/g++ toolchain (preferred) or clang. Also, ```cmake``` (version 4.x), ```git``` and the ```ninja``` build tool need to be installed. Then, you can clone the vcpkg repository (say, in ```/opt/vcpkg```) and follow the instructions [here](https://learn.microsoft.com/en-us/vcpkg/get_started/get-started?pivots=shell-bash) to setup vcpkg in the Linux environment.  
 
 One can checkout this repository and run ```cmake --preset=x64-linux-release -B build-x64-linux``` and see what happens.
 
@@ -193,7 +192,7 @@ This is an example warning about system packages these libraries may need to be 
 
 This is unsupported and never been tried, as the author has no current access to a MacOS environment.  
 
-One needs XCode installed as well as cmake, git and ninja (available via homebrew or ports). Use the same instructions to setup vcpkg as noted for Linux. 
+One needs XCode installed as well as ```cmake```, ```git``` and ```ninja``` (available via homebrew or ports). Use the same instructions to setup vcpkg as noted for Linux. 
 
 Then checkout this repository and run ```cmake --preset=arm64-osx-release -B build-arm64-osx```
 
