@@ -23,6 +23,12 @@
     "fontconfig",
     "pango",
     "gtk3",
-    "poppler"
+    { 
+      "name": "poppler",
+      "features": [
+        "cairo",
+        "glib"
+      ]
+    }
   ]
 }
