@@ -196,14 +196,6 @@ One needs XCode installed as well as ```cmake```, ```git``` and ```ninja``` (ava
 
 Then checkout this repository and run ```cmake --preset=arm64-osx-release -B build-arm64-osx```
 
-## Windows on ARM64
-
-This may work (currently untested), but a modification to the ```CMakePresets.json``` needs to be made. The following line in ```cacheVariables``` of the ```windows-base``` preset needs to be changed to match the following.  
-
-```"VCPKG_HOST_TRIPLET": "arm64-windows"```
-
-This reflects that the host is an ```arm64``` machine. The rest can proceed as in the main part of the documentation. 
-
 # Endnote 
 
 This project currently has one author and contributor, who is disabled and has limited resources in terms of time and money. Your consideration is appreciated when requesting changes or reporting bugs.
