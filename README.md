@@ -53,7 +53,7 @@ This will clone the needed repository.
 You need to integrate ```vcpkg``` into the shell. Run
 
 ```powershell
-cd C:\ctools\vcpkg; 
+cd C:\tools\vcpkg; 
 .\bootstrap-vcpkg.bat
 ``` 
 
