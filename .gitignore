@@ -3,3 +3,9 @@ build-x86
 build-arm64
 dist/
 src/
+
+etc/*.exe
+etc/*.obj
+etc/*.pdb
+
+**/*/.vscode

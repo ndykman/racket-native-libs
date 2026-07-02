@@ -150,6 +150,12 @@ You should now be able to copy the libraries into a form suited for the packages
 
 this will create a ```dist``` directory with three sub-directories for each architecture. In each of those directory, there will be a  ```base```, ```draw```, ```gui```, ```poppler``` and ```etc``` directory with a directory for each architecture. This should have all the needed libraries for the major packages in Racket.  
 
+## Racket DLL Helper
+
+For dlls with a lot of dependencies, listing out the dependencies as required in `define-runtime-lib` requires some careful tracing of the dependency load order. 
+
+To aid with this, source for a utility to create the needed racket core is included in the `etc` directory. Refer to the `README.md` file for more information. 
+
 # Acknowledgements
 
 Thanks to the Racket community for being supportive of these efforts and ensuring that Racket works on all major operating systems. This is often tiring work that isn't given enough recognition. 
