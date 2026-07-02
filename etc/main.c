@@ -9,27 +9,17 @@
 char foundDllFiles[MAX_PATH][MAX_DLLS];
 BOOL visited[MAX_DLLS];
 
-int dllStack_index = -1;
-char* dllStack[MAX_DLLS];
+int dllQueue_last = 0;
+char* dllQueue[MAX_DLLS];
 
-int push_dll(const char* dll_file)
+int add_dll_to_queue(const char* dll_file)
 {
-    if (dllStack_index >= MAX_DLLS)
+    if (dllQueue_last >= MAX_DLLS)
         return -1;
 
-    dllStack_index++;
-    dllStack[dllStack_index] = _strdup(dll_file);
-    return 0;
-}
-
-int pop_dll(char** dll_file)
-{
-    if (dllStack_index < 0)
-        return -1;
-
-    *dll_file = dllStack[dllStack_index];
-    dllStack_index--;
-
+    dllQueue[dllQueue_last] = _strdup(dll_file);
+    dllQueue_last++;
+    dllQueue[dllQueue_last] = NULL;
     return 0;
 }
 
@@ -158,15 +148,17 @@ void visit_dlls(const char* parent, const char *path)
 
         // If this dll was found in the directory and not already visited
         // then push this dll on the stack and recurse. 
+        
+        char fullDllPath[MAX_PATH];
+        PathCombine(fullDllPath, parent, dllName);
+        
         int index = file_index_dll_list(dllName);
 
         if (index != -1 && !visited[index]) {
-            visited[index] = TRUE;
-            char fullDllPath[MAX_PATH];
-            PathCombine(fullDllPath, parent, dllName);
-            push_dll(dllName);
             visit_dlls(parent, fullDllPath);
-        }
+            add_dll_to_queue(dllName);
+            visited[index] = TRUE;
+        } 
 
         imp++;
     }
@@ -199,10 +191,11 @@ int main(int argc, char **argv)
     load_dll_list(dllPath);
     visit_dlls(dllPath,resolved);
 
-    // Pop off each DLL file name from the stack. 
-    char *dll_file;
-    while (pop_dll(&dll_file) == 0) {
-        printf("(ffi-lib \"%s\")\n", dll_file);
+    int index = 0;
+
+    while (dllQueue[index] != NULL) {
+        printf("(ffi-lib \"%s\")\n", dllQueue[index]);
+        index++;
     }
 
     // Finally print the library that was passed to the executable. 
