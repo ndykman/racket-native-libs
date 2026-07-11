@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "dependencies": [
     {
+      "name": "vcpkg-make",
+      "host": true
+    },
+    {
       "name": "libjpeg-turbo",
       "features": [
         "jpeg8"
@@ -29,6 +33,12 @@
         "cairo",
         "glib"
       ]
+    }
+  ],
+  "overrides": [
+    {
+      "name": "openssl",
+      "version": "3.6.3#0"
     }
   ]
 }

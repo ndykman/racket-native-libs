@@ -23,6 +23,11 @@ if (-not (Test-Path -Path "$dist_path")) {
 else {
     Remove-Item -Path "$dist_path\*.dll"
 }
+
+$msvc_redist_path = "$Env:VCToolsRedistDir\x64\Microsoft.VC145.CRT"
+Copy-Item -Path "$msvc_redist_path\vcruntime140.dll" -Destination "$dist_path"
+Copy-Item -Path "$msvc_redist_path\vcruntime140_1.dll" -Destination "$dist_path"
+
 Copy-Item -Path "$src_lib_path\legacy.dll" -Destination "$dist_path"
 Copy-Item -Path "$src_lib_path\libcrypto-3-x64.dll" -Destination "$dist_path"
 Copy-Item -Path "$src_lib_path\libssl-3-x64.dll" -Destination "$dist_path" 
@@ -145,6 +150,10 @@ if (-not (Test-Path -Path "$dist_path")) {
 else {
     Remove-Item -Path "$dist_path\*.dll"
 }
+
+$msvc_redist_path = "$Env:VCToolsRedistDir\x86\Microsoft.VC145.CRT"
+Copy-Item -Path "$msvc_redist_path\vcruntime140.dll" -Destination "$dist_path"
+
 Copy-Item -Path "$src_lib_path\legacy.dll" -Destination "$dist_path"
 Copy-Item -Path "$src_lib_path\libcrypto-3.dll" -Destination "$dist_path"
 Copy-Item -Path "$src_lib_path\libssl-3.dll" -Destination "$dist_path" 
@@ -266,6 +275,12 @@ if (-not (Test-Path -Path "$dist_path")) {
 else {
     Remove-Item -Path "$dist_path\*.dll"
 }
+
+$msvc_redist_path = "$Env:VCToolsRedistDir\arm64\Microsoft.VC145.CRT"
+
+Copy-Item -Path "$msvc_redist_path\vcruntime140.dll" -Destination "$dist_path"
+Copy-Item -Path "$msvc_redist_path\vcruntime140_1.dll" -Destination "$dist_path"
+
 Copy-Item -Path "$src_lib_path\legacy.dll" -Destination "$dist_path"
 Copy-Item -Path "$src_lib_path\libcrypto-3-arm64.dll" -Destination "$dist_path"
 Copy-Item -Path "$src_lib_path\libssl-3-arm64.dll" -Destination "$dist_path" 
