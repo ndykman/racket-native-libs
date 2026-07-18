@@ -1,6 +1,5 @@
 # Racket External Library Build Project
 
-
 This a project that uses a empty [CMake](https://cmake.org/) project alongside the [vcpkg](https://vcpkg.io/en/) project to download and build the various external shared libraries needed by [Racket](https://www.racket-lang.org/) and various Racket packages. The projects are built using the MSVC compiler and build tools. 
 
 ## Prerequisites
@@ -26,7 +25,7 @@ Go ahead and update Windows Terminal and the App Installer if needed (if they ar
 winget install Microsoft.WindowsTerminal
 ```
 
-to install it. This makes it easier to open the needed PowerShell terminal windows later Then you can run the following in a ```cmd``` prompt to get the latest PowerShell, Git and CMake. Again, this installs the development tools in ```C:\tools```. Accept any prompts to install the tools if they appear.  
+to install it. This makes it easier to open the needed PowerShell sessions later on. Then you can run the following in a ```cmd``` prompt to get the latest PowerShell, Git and CMake. Again, this installs the development tools in ```C:\tools```. Accept any prompts to install the tools if they appear.  
 
 ```cmd
 winget install Microsoft.Powershell 
@@ -136,7 +135,7 @@ All requested installations completed successfully in: 1.1 s
 -- Running vcpkg install - done
 ```
 
-You may see an error about ninja not being found, you can ignore this. Repeat this step for each architecture.
+You may see an error about ninja not being found or similar warnings, you can ignore them. Repeat this step for each architecture.
 
 ### Additional Troubleshooting
 
@@ -154,31 +153,31 @@ this will create a ```dist``` directory with three sub-directories for each arch
 
 For dlls with a lot of dependencies, listing out the dependencies as required in `define-runtime-lib` requires some careful tracing of the dependency load order. 
 
-To aid with this, source for a utility to create the needed racket core is included in the `etc` directory. Refer to the `README.md` file for more information. 
+To aid with this, source for a utility to create the needed list of dependencies for a given dll is included in the `etc` directory. Refer to the `etc/README.md` file for more information. 
 
 # Acknowledgements
 
-Thanks to the Racket community for being supportive of these efforts and ensuring that Racket works on all major operating systems. This is often tiring work that isn't given enough recognition. 
+Thanks to the Racket community for supporting this effort. and ensuring that Racket works on all major operating systems. This is often tiring work that isn't given enough recognition. 
 
-# Motivation and Additional Information
+# Project Motivation and Additional Information
 
 ```vcpkg``` was chosen as it has a large number of libraries that it supports, including a large set of patches to get them to build correctly. Managing this information manually would be overwhelming. 
 
 There is community support in ```vcpkg``` for ```MinGW``` based cross-compilation on Linux. However the toolchain is just not mature enough at this point to support Windows libraries on all the architectures. ```arm64``` is especially problematic in some cases. Now, if the cross-compilation tools reach the point that they are useful, they would be preferred by the racket project as racket itself is built with cross-compiler tooling on Linux.  Cross-compilation for MacOS is currently not supported. 
 
-Now, ```vcpkg``` can be used on Linux, MacOS and Windows for native builds and those are officially supported. 
+```vcpkg``` can be used on Linux, MacOS and Windows for native builds and those are officially supported by the project. 
 
-Finally, it is vital to note that a external library used by Racket does *not* need to be a vcpkg. 
+It is vital to note that a external library used by Racket does *not* need to be a vcpkg. One needs to just provide packages with the needed DLLs for all the supported operating systems.
 
 ## Unsupported ProjectConfigurations
 
-For unsupported configurations, a deeper knowledge of ```cmake``` is really useful, especially how the preset ```json``` files work and how host and target triplets interact. Given this, one can use this project as a launching point for building libraries on different hosts and targers. 
+For unsupported configurations, a deeper knowledge of ```cmake``` is really useful, especially how the preset ```json``` files work and how host and target triplets interact. Given this, one can use this project as a launching point for building libraries on different hosts and targets. 
 
-```vcpkg``` does support MacOS, Windows and Linux, it shpuld possible to use these systems to create dynamic libraries. This may not be the best case for Linux and MacOS versus using package manager to install dependencies. Like Windows, one needs to install the appropriate tooling, including a host C/C++ tooling and cross compilers if needed. 
+```vcpkg``` does support MacOS, Windows and Linux, it should possible to use these systems to create dynamic libraries. This may not be the best case for Linux and MacOS versus using a package manager to install dependencies. Like Windows, one needs to install the appropriate tooling, including a host C/C++ tooling and cross compilers if needed. 
 
 ### Linux
 
-This is unsupported, but seems to work. 
+This is unsupported and untested, but seems to work. 
 
 One needs to install the gcc/g++ toolchain (preferred) or clang. Also, ```cmake``` (version 4.x), ```git``` and the ```ninja``` build tool need to be installed. Then, you can clone the vcpkg repository (say, in ```/opt/vcpkg```) and follow the instructions [here](https://learn.microsoft.com/en-us/vcpkg/get_started/get-started?pivots=shell-bash) to setup vcpkg in the Linux environment.  
 

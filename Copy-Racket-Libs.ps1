@@ -115,7 +115,7 @@ else {
 
 Copy-Item -Path "$src_lib_path\brotlicommon.dll" -Destination "$dist_path"
 Copy-Item -Path "$src_lib_path\brotlidec.dll" -Destination "$dist_path"
-Copy-Item -Path "$src_lib_path\brotlienc.dll" -Destination "$dist_path"
+Copy-Item -Path "$src_lib_path\bz2.dll" -Destination "$dist_path"
 Copy-Item -Path "$src_lib_path\freetype.dll" -Destination "$dist_path"
 Copy-Item -Path "$src_lib_path\libpng16.dll" -Destination "$dist_path"
 Copy-Item -Path "$src_lib_path\jpeg8.dll" -Destination "$dist_path"
@@ -241,7 +241,7 @@ else {
 
 Copy-Item -Path "$src_lib_path\brotlicommon.dll" -Destination "$dist_path"
 Copy-Item -Path "$src_lib_path\brotlidec.dll" -Destination "$dist_path"
-Copy-Item -Path "$src_lib_path\brotlienc.dll" -Destination "$dist_path"
+Copy-Item -Path "$src_lib_path\bz2.dll" -Destination "$dist_path"
 Copy-Item -Path "$src_lib_path\freetype.dll" -Destination "$dist_path"
 Copy-Item -Path "$src_lib_path\libpng16.dll" -Destination "$dist_path"
 Copy-Item -Path "$src_lib_path\jpeg8.dll" -Destination "$dist_path"
@@ -368,7 +368,7 @@ else {
 
 Copy-Item -Path "$src_lib_path\brotlicommon.dll" -Destination "$dist_path"
 Copy-Item -Path "$src_lib_path\brotlidec.dll" -Destination "$dist_path"
-Copy-Item -Path "$src_lib_path\brotlienc.dll" -Destination "$dist_path"
+Copy-Item -Path "$src_lib_path\bz2.dll" -Destination "$dist_path"
 Copy-Item -Path "$src_lib_path\freetype.dll" -Destination "$dist_path"
 Copy-Item -Path "$src_lib_path\libpng16.dll" -Destination "$dist_path"
 Copy-Item -Path "$src_lib_path\jpeg8.dll" -Destination "$dist_path"

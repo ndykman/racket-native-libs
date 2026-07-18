@@ -20,7 +20,10 @@
     "libsass",
     "gmp",
     "mpfr",
-    "openssl",
+    { 
+      "name": "openssl",
+      "features": [ "ssl3", "fips" ]
+    },
     "sqlite3",
     "freetype",
     "harfbuzz",
