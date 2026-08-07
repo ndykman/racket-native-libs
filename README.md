@@ -151,7 +151,7 @@ this will create a ```dist``` directory with three sub-directories for each arch
 
 ## Racket DLL Helper
 
-For dlls with a lot of dependencies, listing out the dependencies as required in `define-runtime-lib` requires some careful tracing of the dependency load order. 
+For dlls with a lot of dependencies, listing out the dependencies as required by `define-runtime-lib` in Racket requires some careful tracing of the dependency load order. 
 
 To aid with this, source for a utility to create the needed list of dependencies for a given dll is included in the `etc` directory. Refer to the `etc/README.md` file for more information. 
 
