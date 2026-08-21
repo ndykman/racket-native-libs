@@ -161,7 +161,7 @@ Thanks to the Racket community for supporting this effort. and ensuring that Rac
 
 # Project Motivation and Additional Information
 
-```vcpkg``` was chosen as it has a large number of libraries that it supports, including a large set of patches to get them to build correctly. While ```Racket`` has an excellent build tool built on ```zuo```, it is not reasonable for the project to manage all the details for building Windows libraries. 
+```vcpkg``` was chosen as it has a large number of libraries that it supports, including a large set of patches to get them to build correctly. While Racket has an excellent build tool built on ```zuo```, it is not reasonable for the project to manage all the details for building Windows libraries. 
 
 There is community support in ```vcpkg``` for ```MinGW``` based cross-compilation on Linux. However the toolchain is just not mature enough at this point to support Windows libraries on all the architectures; ```arm64``` is especially problematic in some cases. Now, if the cross-compilation tools reach the point that they are useful, they would be preferred by the racket project as racket itself is built with cross-compiler tooling on Linux.  Cross-compilation for MacOS is currently not supported. 
 
