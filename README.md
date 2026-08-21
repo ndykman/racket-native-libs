@@ -161,23 +161,23 @@ Thanks to the Racket community for supporting this effort. and ensuring that Rac
 
 # Project Motivation and Additional Information
 
-```vcpkg``` was chosen as it has a large number of libraries that it supports, including a large set of patches to get them to build correctly. Managing this information manually would be overwhelming. 
+```vcpkg``` was chosen as it has a large number of libraries that it supports, including a large set of patches to get them to build correctly. While ```Racket`` has an excellent build tool built on ```zuo```, it is not reasonable for the project to manage all the details for building Windows libraries. 
 
-There is community support in ```vcpkg``` for ```MinGW``` based cross-compilation on Linux. However the toolchain is just not mature enough at this point to support Windows libraries on all the architectures. ```arm64``` is especially problematic in some cases. Now, if the cross-compilation tools reach the point that they are useful, they would be preferred by the racket project as racket itself is built with cross-compiler tooling on Linux.  Cross-compilation for MacOS is currently not supported. 
+There is community support in ```vcpkg``` for ```MinGW``` based cross-compilation on Linux. However the toolchain is just not mature enough at this point to support Windows libraries on all the architectures; ```arm64``` is especially problematic in some cases. Now, if the cross-compilation tools reach the point that they are useful, they would be preferred by the racket project as racket itself is built with cross-compiler tooling on Linux.  Cross-compilation for MacOS is currently not supported. 
 
-```vcpkg``` can be used on Linux, MacOS and Windows for native builds and those are officially supported by the project. 
+```vcpkg``` can be used on Linux, MacOS and Windows for native builds and those are officially supported by the ```vcpkg``` project. 
 
-It is vital to note that a external library used by Racket does *not* need to be a vcpkg. One needs to just provide packages with the needed DLLs for all the supported operating systems.
+It is vital to note that a external library used by Racket does *not* need to be a ```vcpkg```. One needs to just provide packages with the needed DLLs for all the supported operating systems.
 
-## Unsupported ProjectConfigurations
+## Unsupported Project Configurations
 
 For unsupported configurations, a deeper knowledge of ```cmake``` is really useful, especially how the preset ```json``` files work and how host and target triplets interact. Given this, one can use this project as a launching point for building libraries on different hosts and targets. 
 
-```vcpkg``` does support MacOS, Windows and Linux, it should possible to use these systems to create dynamic libraries. This may not be the best case for Linux and MacOS versus using a package manager to install dependencies. Like Windows, one needs to install the appropriate tooling, including a host C/C++ tooling and cross compilers if needed. 
+```vcpkg``` does support MacOS, Windows and Linux, it should possible to use these systems to create dynamic libraries. This may not be the best use case for Linux and MacOS versus using a package manager to install dependencies. Like Windows, one needs to install the appropriate tooling, including a host C/C++ tooling and cross compilers if needed. 
 
 ### Linux
 
-This is unsupported and untested, but seems to work. 
+This is unsupported and untested. 
 
 One needs to install the gcc/g++ toolchain (preferred) or clang. Also, ```cmake``` (version 4.x), ```git``` and the ```ninja``` build tool need to be installed. Then, you can clone the vcpkg repository (say, in ```/opt/vcpkg```) and follow the instructions [here](https://learn.microsoft.com/en-us/vcpkg/get_started/get-started?pivots=shell-bash) to setup vcpkg in the Linux environment.  
 
